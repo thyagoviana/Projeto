@@ -6,6 +6,4 @@ class AutorServices extends Services{
     }
 }
 
-
-
 module.exports = AutorServices;

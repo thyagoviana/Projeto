@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nome: {
+      titulo: {
         type: Sequelize.STRING
       },
       preco: {
@@ -18,12 +18,12 @@ module.exports = {
       editora_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: {model: 'editora', key: 'cnpj'}
+        references: {model: 'editoras', key: 'id'}
       },
       autor_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: {model: 'autor', key: 'id'}
+        references: {model: 'autores', key: 'id'}
       },
       createdAt: {
         allowNull: false,
