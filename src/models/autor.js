@@ -5,14 +5,14 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Autor extends Model {
     static associate(models) {
-        Autor.hasMany(models.Livro, {
-          foreignKey: 'autor_id'
-        });
+      Autor.hasMany(models.Livro, {
+        foreignKey: 'autor_id',
+      });
     }
   }
   Autor.init({
     nome: DataTypes.STRING,
-    ano_nascimento: DataTypes.INTEGER,
+    nascimento: DataTypes.INTEGER,
     nacionalidade: DataTypes.STRING
   }, {
     sequelize,

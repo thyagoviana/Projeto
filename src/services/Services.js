@@ -4,16 +4,18 @@ class Services{
     constructor(nomeModelo){
         this.model = nomeModelo;
     }
-    async getTodosRegistros(){
+
+    async getAll(){
         return dataSource[this.model].findAll();
     }
-    async getRegistroPorID(id){
+
+    async getPorId(id){
         return dataSource[this.model].findOne({where:{id}});
     }
-    async criarRegistro(dados){
+    async criaNovo(dados){
         return dataSource[this.model].create(dados);
     }
-    async atualizarRegistro(dadosAtualizados,id){
+    async atualiza(dadosAtualizados,id){
         const listaRegistrosAtualizados = await dataSource[this.model].update(
             dadosAtualizados,{where:{id}}
         );
@@ -22,7 +24,7 @@ class Services{
         }
         return true;
     }
-    async deletarRegistro(id){
+    async exclui(id){
         return dataSource[this.model].destroy({where:{id:id}});
     }
 }
