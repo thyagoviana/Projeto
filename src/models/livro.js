@@ -6,11 +6,11 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Livro extends Model {
     static associate(models) {
-      Livro.hasMany(models.Editora, {
+      Livro.belongsTo(models.Editora, {
         foreignKey: 'editora_id',
         as: 'editoras'
       });
-      Livro.hasMany(models.Autor,{
+      Livro.belongsTo(models.Autor,{
         foreignKey: 'autor_id',
         as: 'autores'
       });

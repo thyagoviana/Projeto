@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   class Autor extends Model {
     static associate(models) {
       Autor.hasMany(models.Livro, {
-        foreignKey: 'autor_id',
+        foreignKey: 'autor_id'
       });
     }
   }
